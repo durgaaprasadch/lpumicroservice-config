@@ -1,0 +1,2 @@
+# lpumicroservice-config
+microservice
