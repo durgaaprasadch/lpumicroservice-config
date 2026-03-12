@@ -1,15 +1,9 @@
 server:
-  port: 9091
+  port: 9092
 
 spring:
-  application:
-    name: user-service
-
-  config:
-    import: optional:configserver:http://localhost:7777
-
   datasource:
-    url: jdbc:mysql://localhost:3306/userservicedb
+    url: jdbc:mysql://localhost:3306/orderservicedb
     username: root
     password: Durga@123
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,10 +19,14 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8083/eureka/
 
   instance:
     hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
